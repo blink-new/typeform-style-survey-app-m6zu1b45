@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Button } from '../ui/button';
-import { PlusCircle, BarChart3, Home } from 'lucide-react';
+import { PlusCircle } from 'lucide-react';
 
 export function Header() {
   return (
-    <header className="border-b border-border bg-background">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
-          <Link to="/" className="flex items-center gap-2 text-xl font-bold text-primary">
+          <Link to="/" className="flex items-center gap-2 text-xl font-display font-bold text-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -24,27 +24,11 @@ export function Header() {
             <span>FormFlow</span>
           </Link>
         </div>
-        <nav className="hidden md:flex items-center gap-6">
-          <Link 
-            to="/" 
-            className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground"
-          >
-            <Home className="h-4 w-4" />
-            Dashboard
-          </Link>
-          <Link 
-            to="/analytics" 
-            className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground"
-          >
-            <BarChart3 className="h-4 w-4" />
-            Analytics
-          </Link>
-        </nav>
         <div className="flex items-center gap-4">
           <Link to="/create">
-            <Button className="gap-1">
+            <Button size="sm" variant="ghost" className="gap-1 text-muted-foreground hover:text-primary">
               <PlusCircle className="h-4 w-4" />
-              <span>New Survey</span>
+              <span>New Form</span>
             </Button>
           </Link>
         </div>
